@@ -1,0 +1,188 @@
+# depslib dependency file v1.0
+1628209728 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Timer/Timer.cpp
+	"Timer.h"
+	"SDL2/SDL.h"
+
+1628209578 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Timer/Timer.h
+
+1628364299 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.cpp
+	"Engine.h"
+	"Input.h"
+	"Timer.h"
+	"TextureManager.h"
+	"GameFragment.h"
+
+1628349625 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.h
+	<iostream>
+	<string>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"ManagerFragment.h"
+
+1628211236 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/main.cpp
+	"Engine.h"
+	"Timer.h"
+	<iostream>
+
+1628384602 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.cpp
+	"Input.h"
+	"Engine.h"
+
+1628365451 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.h
+	"SDL2/SDL.h"
+	"Point2D.h"
+
+1628356439 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.cpp
+	"TextureManager.h"
+	"Engine.h"
+	"tinyxml.h"
+	<iostream>
+
+1628356072 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.h
+	<string>
+	<SDL2/SDL.h>
+	<map>
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/XmlStaff/tinystr.cpp
+	"tinystr.h"
+
+1376507762 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/XmlStaff/tinystr.h
+	<assert.h>
+	<string.h>
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/XmlStaff/tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1376507762 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/XmlStaff/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/XmlStaff/tinyxmlerror.cpp
+	"tinyxml.h"
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/XmlStaff/tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/XmlStaff/tinystr.h
+	<assert.h>
+	<string.h>
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/XmlStaff/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Vendor/tinystr.cpp
+	"tinystr.h"
+
+1376507762 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Vendor/tinystr.h
+	<assert.h>
+	<string.h>
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Vendor/tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1628346439 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Vendor/tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Vendor/tinyxmlerror.cpp
+	"tinyxml.h"
+
+1376507762 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Vendor/tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1628355522 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.h
+	<vector>
+	"Fragment.h"
+
+1628347296 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/Fragment.h
+	<SDL2/SDL.h>
+
+1628356420 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.cpp
+	"GameFragment.h"
+	"Engine.h"
+	"Ball.h"
+
+1628351597 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.h
+	<vector>
+	"Fragment.h"
+	"GameObject.h"
+
+1628355522 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
+	"ManagerFragment.h"
+
+1628558863 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
+	"Ball.h"
+	"TextureManager.h"
+	"Input.h"
+	"CollisionHandler.h"
+
+1628396754 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.h
+	"Entity.h"
+	"BodyObject.h"
+
+1628352621 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Entity.h
+	"GameObject.h"
+	<string>
+
+1628351575 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Object/GameObject.h
+	"IObject.h"
+	"Transform2D.h"
+	<SDL2/SDL.h>
+	"Point2D.h"
+
+1628349976 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Object/IObject.h
+
+1628353388 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Physics/Transform2D.h
+	"Vector2D.h"
+
+1628351265 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Physics/Vector2D.h
+	<iostream>
+
+1628351553 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Physics/Point2D.h
+	<iostream>
+
+1628365446 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Collision/CollisionHandler.cpp
+	"CollisionHandler.h"
+
+1628365985 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Collision/CollisionHandler.h
+	"SDL2/SDL.h"
+	"Point2D.h"
+
+1628396809 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Physics/BodyObject.h
+	"Vector2D.h"
+	<iostream>
+

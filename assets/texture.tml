@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UFT-8"?>
+<texture>
+	
+	<texture id="ball_idle" source="assets/images/ball_idle.png"/>
+
+</texture>
