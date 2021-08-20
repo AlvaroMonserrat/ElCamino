@@ -23,6 +23,7 @@
 					<Add directory="src/Entities" />
 					<Add directory="src/Collision" />
 					<Add directory="./" />
+					<Add directory="src/Map" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -42,6 +43,7 @@
 					<Add directory="src/Entities" />
 					<Add directory="src/Collision" />
 					<Add directory="./" />
+					<Add directory="src/Map" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -71,6 +73,12 @@
 		<Unit filename="src/Graphics/TextureManager.h" />
 		<Unit filename="src/Input/Input.cpp" />
 		<Unit filename="src/Input/Input.h" />
+		<Unit filename="src/Map/GameMap.h" />
+		<Unit filename="src/Map/Layer.h" />
+		<Unit filename="src/Map/MapParser.cpp" />
+		<Unit filename="src/Map/MapParser.h" />
+		<Unit filename="src/Map/TileLayer.cpp" />
+		<Unit filename="src/Map/TileLayer.h" />
 		<Unit filename="src/Object/GameObject.h" />
 		<Unit filename="src/Object/IObject.h" />
 		<Unit filename="src/Physics/BodyObject.h" />

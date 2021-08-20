@@ -52,6 +52,7 @@ bool Engine::Init()
     m_IsRunning = LoadTextures("assets/texture.tml");
 
     m_ManagerFragment = ManagerFragment(new GameFragment());
+    //m_ManagerFragment.AddFragment(new GameFragment());
     m_ManagerFragment.Init();
 
     return m_IsRunning;
