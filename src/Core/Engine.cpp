@@ -3,6 +3,7 @@
 #include "Timer.h"
 #include "TextureManager.h"
 #include "GameFragment.h"
+#include "MapParser.h"
 
 Engine* Engine::s_Instance = nullptr;
 
@@ -49,11 +50,16 @@ bool Engine::Init()
         }
     }
 
+    //Cargar Texturas
     m_IsRunning = LoadTextures("assets/texture.tml");
+
+    //Cargar Mapas
+    m_IsRunning = MapParser::GetInstance()->Load();
 
     m_ManagerFragment = ManagerFragment(new GameFragment());
     //m_ManagerFragment.AddFragment(new GameFragment());
     m_ManagerFragment.Init();
+
 
     return m_IsRunning;
 }

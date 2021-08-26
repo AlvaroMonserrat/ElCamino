@@ -5,12 +5,13 @@
 
 1628209578 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Timer/Timer.h
 
-1628364299 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.cpp
+1629421436 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.cpp
 	"Engine.h"
 	"Input.h"
 	"Timer.h"
 	"TextureManager.h"
 	"GameFragment.h"
+	"MapParser.h"
 
 1628349625 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.h
 	<iostream>
@@ -32,13 +33,13 @@
 	"SDL2/SDL.h"
 	"Point2D.h"
 
-1628356439 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.cpp
+1629913197 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.cpp
 	"TextureManager.h"
 	"Engine.h"
 	"tinyxml.h"
 	<iostream>
 
-1628356072 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.h
+1629911234 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.h
 	<string>
 	<SDL2/SDL.h>
 	<map>
@@ -131,17 +132,19 @@
 1628347296 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/Fragment.h
 	<SDL2/SDL.h>
 
-1628356420 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.cpp
+1629896607 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.cpp
 	"GameFragment.h"
 	"Engine.h"
+	"MapParser.h"
 	"Ball.h"
 
-1628351597 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.h
+1629896165 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.h
 	<vector>
 	"Fragment.h"
 	"GameObject.h"
+	"GameMap.h"
 
-1628355522 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
+1629896607 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
 	"ManagerFragment.h"
 
 1628558863 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
@@ -184,5 +187,31 @@
 
 1628396809 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Physics/BodyObject.h
 	"Vector2D.h"
+	<iostream>
+
+1629895029 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/GameMap.h
+	"Layer.h"
+	<vector>
+
+1629417875 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/Layer.h
+
+1629911392 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/MapParser.h
+	<map>
+	<string>
+	"GameMap.h"
+	"TileLayer.h"
+	"tinyxml.h"
+
+1629855539 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/TileLayer.h
+	"Layer.h"
+	<string>
+	<vector>
+
+1629913101 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/MapParser.cpp
+	"MapParser.h"
+
+1629913185 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/TileLayer.cpp
+	"TileLayer.h"
+	"TextureManager.h"
 	<iostream>
 

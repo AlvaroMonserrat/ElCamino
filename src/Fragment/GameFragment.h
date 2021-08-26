@@ -4,7 +4,7 @@
 #include <vector>
 #include "Fragment.h"
 #include "GameObject.h"
-
+#include "GameMap.h"
 
 class GameFragment : public Fragment
 {
@@ -15,7 +15,7 @@ class GameFragment : public Fragment
         virtual void Render();
 
     private:
-        //GameMap* m_LevelMap;
+        GameMap* m_LevelMap;
         std::vector<GameObject*> m_GameObjects;
 };
 

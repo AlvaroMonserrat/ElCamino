@@ -13,7 +13,7 @@ struct TileSet
     std::string Name, Source;
 };
 
-using TilesetList = std::vector<Tileset>;
+using TilesetList = std::vector<TileSet>;
 using TileMap = std::vector<std::vector<int>>;
 
 class TileLayer : public Layer
@@ -30,7 +30,7 @@ class TileLayer : public Layer
         //Pixels size
         int m_TileSize;
 
-        //PixlesRow and Cols
+        //Fila y Columna de Tiles en el mapa
         int m_RowCount, m_ColCount;
 
         //Mapa formado por id de tiles y capas

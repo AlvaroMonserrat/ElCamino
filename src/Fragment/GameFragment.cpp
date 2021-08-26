@@ -1,11 +1,13 @@
 #include "GameFragment.h"
 #include "Engine.h"
+#include "MapParser.h"
 #include "Ball.h"
 
 bool GameFragment::Init()
 {
     //Obtener Render principal
     m_Ctxt = Engine::GetInstance()->GetRenderer();
+    m_LevelMap = MapParser::GetInstance()->GetMaps("map");
 
     Properties* propsBall = new Properties("ball_idle", 100, 200, 32, 32);
     //GameObject* ball = ObjectFactory::GetInstance()->CreateObject("BALL", propsBall);
@@ -25,6 +27,7 @@ bool GameFragment::Exit()
 
 void GameFragment::Update(float dt)
 {
+    m_LevelMap->Update();
     //Actualizar objetos del juego
     for(unsigned int i=0; i!=m_GameObjects.size(); i++)
     {
@@ -35,6 +38,7 @@ void GameFragment::Update(float dt)
 
 void GameFragment::Render()
 {
+    m_LevelMap->Render();
     //Rendizar objetos
     for(unsigned int i=0; i!=m_GameObjects.size(); i++)
     {
