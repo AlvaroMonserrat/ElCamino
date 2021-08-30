@@ -1,4 +1,5 @@
 #include "MapParser.h"
+#include "StateGame.h"
 
 MapParser* MapParser::s_Instance = nullptr;
 
@@ -118,7 +119,12 @@ TileLayer* MapParser::ParseTileLayer(TiXmlElement* xmlLayer, TilesetList tileset
         {
             getline(iss, id, ',');
             if(id.compare("83") == 0)
-                std::cout << id << std::endl;
+            {
+                //std::cout << "col:" << col  << " row:" << row << std::endl;
+                //std::cout << "x:" << col*tilesize  << " y:" << row*tilesize << std::endl;
+                StateGame::GetInstance()->setStartZone(col*tilesize, row*tilesize, tilesize, tilesize);
+            }
+
             std::stringstream convertor(id);
             convertor >> tilemap[row][col];
 

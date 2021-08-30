@@ -132,11 +132,12 @@
 1628347296 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/Fragment.h
 	<SDL2/SDL.h>
 
-1629896607 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.cpp
+1630293817 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.cpp
 	"GameFragment.h"
 	"Engine.h"
 	"MapParser.h"
 	"Ball.h"
+	"StateGame.h"
 
 1629896165 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.h
 	<vector>
@@ -207,11 +208,18 @@
 	<string>
 	<vector>
 
-1629913101 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/MapParser.cpp
+1630293171 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/MapParser.cpp
 	"MapParser.h"
+	"StateGame.h"
 
 1629913185 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/TileLayer.cpp
 	"TileLayer.h"
 	"TextureManager.h"
 	<iostream>
+
+1630292479 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/States/StateGame.cpp
+	"StateGame.h"
+
+1630293723 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/States/StateGame.h
+	"SDL2/SDL.h"
 

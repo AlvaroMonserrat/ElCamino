@@ -2,6 +2,7 @@
 #include "Engine.h"
 #include "MapParser.h"
 #include "Ball.h"
+#include "StateGame.h"
 
 bool GameFragment::Init()
 {
@@ -9,7 +10,9 @@ bool GameFragment::Init()
     m_Ctxt = Engine::GetInstance()->GetRenderer();
     m_LevelMap = MapParser::GetInstance()->GetMaps("map");
 
-    Properties* propsBall = new Properties("ball_idle", 100, 200, 32, 32);
+    SDL_Rect startZone = StateGame::GetInstance()->getStartZone();
+
+    Properties* propsBall = new Properties("ball_idle", startZone.x, startZone.y, 32, 32);
     //GameObject* ball = ObjectFactory::GetInstance()->CreateObject("BALL", propsBall);
     Ball* ball = new Ball(propsBall);
     m_GameObjects.push_back(ball);

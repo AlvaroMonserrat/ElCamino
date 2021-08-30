@@ -24,6 +24,7 @@
 					<Add directory="src/Collision" />
 					<Add directory="./" />
 					<Add directory="src/Map" />
+					<Add directory="src/States" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -44,6 +45,7 @@
 					<Add directory="src/Collision" />
 					<Add directory="./" />
 					<Add directory="src/Map" />
+					<Add directory="src/States" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -85,6 +87,8 @@
 		<Unit filename="src/Physics/Point2D.h" />
 		<Unit filename="src/Physics/Transform2D.h" />
 		<Unit filename="src/Physics/Vector2D.h" />
+		<Unit filename="src/States/StateGame.cpp" />
+		<Unit filename="src/States/StateGame.h" />
 		<Unit filename="src/Timer/Timer.cpp" />
 		<Unit filename="src/Timer/Timer.h" />
 		<Unit filename="src/Vendor/tinystr.cpp" />
