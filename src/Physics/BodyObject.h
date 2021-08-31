@@ -48,7 +48,7 @@ class BodyObject
             m_Acceleration.Y = (m_Force.Y + m_Friction.Y) / m_Mass;
             m_Velocity = m_Acceleration;
             m_Position = m_Velocity;
-            std::cout << m_Velocity.X << std::endl;
+            //std::cout << m_Velocity.X << std::endl;
 
 
         }

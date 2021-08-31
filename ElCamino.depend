@@ -25,11 +25,11 @@
 	"Timer.h"
 	<iostream>
 
-1628384602 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.cpp
+1630347528 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.cpp
 	"Input.h"
 	"Engine.h"
 
-1628365451 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.h
+1630347528 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.h
 	"SDL2/SDL.h"
 	"Point2D.h"
 
@@ -148,11 +148,12 @@
 1629896607 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
 	"ManagerFragment.h"
 
-1628558863 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
+1630378296 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
 	"Ball.h"
 	"TextureManager.h"
 	"Input.h"
 	"CollisionHandler.h"
+	"StateGame.h"
 
 1628396754 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.h
 	"Entity.h"
@@ -179,14 +180,17 @@
 1628351553 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Physics/Point2D.h
 	<iostream>
 
-1628365446 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Collision/CollisionHandler.cpp
+1630377899 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Collision/CollisionHandler.cpp
 	"CollisionHandler.h"
 
-1628365985 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Collision/CollisionHandler.h
+1630377926 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Collision/CollisionHandler.h
 	"SDL2/SDL.h"
 	"Point2D.h"
+	"GameMap.h"
+	"TileLayer.h"
+	"MapParser.h"
 
-1628396809 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Physics/BodyObject.h
+1630340346 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Physics/BodyObject.h
 	"Vector2D.h"
 	<iostream>
 

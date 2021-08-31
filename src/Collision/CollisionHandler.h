@@ -3,23 +3,26 @@
 
 #include "SDL2/SDL.h"
 #include "Point2D.h"
+#include "GameMap.h"
+#include "TileLayer.h"
+#include "MapParser.h"
 
 class CollisionHandler
 {
     public:
         bool CheckCollision(SDL_Rect a, SDL_Rect b);
         bool CheckPointInsideBox(Point2D point, SDL_Rect box);
-        //bool MapCollision(SDL_Rect a);
+        bool MapCollision(SDL_Rect a);
 
         inline static CollisionHandler* GetInstance(){ return s_Instance = (s_Instance != nullptr) ? s_Instance : new CollisionHandler();}
 
 
     private:
-        CollisionHandler(){};
+        CollisionHandler();
         static CollisionHandler* s_Instance;
 
-        //TileMap m_CollisionTileMap;
-        //TileLayer* m_CollisionLayer;
+        TileMap m_CollisionTileMap;
+        TileLayer* m_CollisionLayer;
 };
 
 #endif // COLLISIONHANDLER_H

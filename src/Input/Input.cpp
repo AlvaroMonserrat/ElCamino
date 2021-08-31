@@ -20,11 +20,11 @@ void Input::Listen()
                 break;
 
             case SDL_KEYDOWN:
-                //KeyDown();
+                KeyDown();
                 break;
 
             case SDL_KEYUP:
-                //KeyUP();
+                KeyUP();
                 break;
 
             case SDL_MOUSEMOTION:
@@ -36,6 +36,12 @@ void Input::Listen()
     }
 }
 
+bool Input::GetKeyDown(SDL_Scancode key)
+{
+    return m_KeyStates[key] == 1;
+}
+
+
 bool Input::GetMousePressLeft()
 {
     SDL_PumpEvents();
@@ -43,6 +49,15 @@ bool Input::GetMousePressLeft()
     return SDL_BUTTON_LEFT && m_MouseStates;
 }
 
+void Input::KeyUP()
+{
+    m_KeyStates = SDL_GetKeyboardState(nullptr);
+}
+
+void Input::KeyDown()
+{
+    m_KeyStates = SDL_GetKeyboardState(nullptr);
+}
 
 void Input::MotionMouse(int x, int y)
 {

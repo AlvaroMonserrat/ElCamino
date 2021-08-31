@@ -2,6 +2,7 @@
 #include "TextureManager.h"
 #include "Input.h"
 #include "CollisionHandler.h"
+#include "StateGame.h"
 
 Ball::Ball(Properties* props) : Entity(props)
 {
@@ -22,24 +23,59 @@ void Ball::Draw()
 
 void Ball::Update(float dt)
 {
-    Point2D mouseXY = Input::GetInstance()->GetPoint();
-    SDL_Rect box = {(int)m_Transform->X, (int)m_Transform->Y, m_Width, m_Height};
+    //MoveBall(dt);
+    m_IsMoving = false;
 
-    //If the mouse is over the button
-    if(CollisionHandler::GetInstance()->CheckPointInsideBox(mouseXY, box))
+    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_UP))
     {
-        if(Input::GetInstance()->GetMousePressLeft() && !m_IsMoving)
-        {
-            std::cout << "Click" << std::endl;
-            m_IsMoving = true;
-            m_MoveForceX = MOVE_FORCE;
-        }
+        m_IsMoving = true;
+        m_BodyObject->ApplyForceY(-10);
+        m_BodyObject->Update(dt);
+        m_Transform->Y += m_BodyObject->Position().Y;
     }
 
-    //Click en la bola y comienza a moverse
-    MoveBall(dt);
-    //m_MoveForceX -= 0.1;
+    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_DOWN))
+    {
+        m_IsMoving = true;
+        m_BodyObject->ApplyForceY(10);
+        m_BodyObject->Update(dt);
+        m_Transform->Y += m_BodyObject->Position().Y;
+    }
 
+    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_LEFT))
+    {
+        m_IsMoving = true;
+        m_BodyObject->ApplyForceX(-10);
+        m_BodyObject->Update(dt);
+        m_Transform->X += m_BodyObject->Position().X;
+    }
+
+    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_RIGHT))
+    {
+        m_IsMoving = true;
+        m_BodyObject->ApplyForceX(10);
+        m_BodyObject->Update(dt);
+        m_Transform->X += m_BodyObject->Position().X;
+    }
+
+    if(m_IsMoving == true)
+    {
+        //Revisar si estoy sobre superficie o no.
+        SDL_Rect box = {(int)m_Transform->X, (int)m_Transform->Y, m_Width/2, m_Height/2};
+
+        if(CollisionHandler::GetInstance()->MapCollision(box))
+        {
+           std::cout << "Colisión" << std::endl;
+        }
+        else
+        {
+            std::cout << "No Colisión" << std::endl;
+            SDL_Rect startZone = StateGame::GetInstance()->getStartZone();
+            m_Transform->X = startZone.x;
+            m_Transform->Y = startZone.y;
+        }
+
+    }
 }
 
 void Ball::Clean()
@@ -51,8 +87,24 @@ void Ball::Clean()
 
 }
 
+/*Mover con Click Mouse*/
 void Ball::MoveBall(float dt)
 {
+    Point2D mouseXY = Input::GetInstance()->GetPoint();
+    SDL_Rect box = {(int)m_Transform->X, (int)m_Transform->Y, m_Width, m_Height};
+
+
+    //If the mouse is over the button
+    //Click en la bola y comienza a moverse
+    if(CollisionHandler::GetInstance()->CheckPointInsideBox(mouseXY, box))
+    {
+        if(Input::GetInstance()->GetMousePressLeft() && !m_IsMoving)
+        {
+            std::cout << "Click" << std::endl;
+            m_IsMoving = true;
+            m_MoveForceX = MOVE_FORCE;
+        }
+    }
 
     if( (m_Transform->Y + m_Height) >= SCREEN_HEIGHT && m_MoveForceY > 0)
     {
@@ -94,7 +146,6 @@ void Ball::MoveBall(float dt)
         m_IsMoving = false;
         m_MoveTime = MOVE_TIME;
     }
-
 
 
 }

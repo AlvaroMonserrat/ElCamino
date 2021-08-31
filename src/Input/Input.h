@@ -13,6 +13,7 @@ class Input
         }
 
         void Listen();
+        bool GetKeyDown(SDL_Scancode key);
 
         bool GetMousePressLeft();
         Point2D GetPoint();
@@ -20,6 +21,9 @@ class Input
     private:
         Input();
         static Input* s_Instance;
+
+        void KeyUP();
+        void KeyDown();
 
         void MotionMouse(int x, int y);
 
