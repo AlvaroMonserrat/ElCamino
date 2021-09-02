@@ -3,6 +3,7 @@
 #include "Input.h"
 #include "CollisionHandler.h"
 #include "StateGame.h"
+#include "Engine.h"
 
 Ball::Ball(Properties* props) : Entity(props)
 {
@@ -18,7 +19,14 @@ Ball::Ball(Properties* props) : Entity(props)
 
 void Ball::Draw()
 {
+
     TextureManager::GetInstance()->Draw(m_TextureID, m_Transform->X, m_Transform->Y, m_Width, m_Height);
+
+    SDL_Rect box = {(int)m_Transform->X + m_Width / 2, (int)m_Transform->Y + m_Height / 2, 2, 2};
+
+    SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 255, 0, 0, 255);
+    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &box);
+
 }
 
 void Ball::Update(float dt)
@@ -61,7 +69,7 @@ void Ball::Update(float dt)
     if(m_IsMoving == true)
     {
         //Revisar si estoy sobre superficie o no.
-        SDL_Rect box = {(int)m_Transform->X, (int)m_Transform->Y, m_Width/2, m_Height/2};
+        SDL_Rect box = {(int)m_Transform->X + m_Width / 2, (int)m_Transform->Y + m_Height / 2, 2, 2};
 
         if(CollisionHandler::GetInstance()->MapCollision(box))
         {

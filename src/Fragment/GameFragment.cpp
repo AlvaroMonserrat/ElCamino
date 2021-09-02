@@ -26,6 +26,9 @@ bool GameFragment::Exit()
         m_GameObjects[i]->Clean();
     }
 
+    //Limpiar Mapa
+
+
 }
 
 void GameFragment::Update(float dt)
