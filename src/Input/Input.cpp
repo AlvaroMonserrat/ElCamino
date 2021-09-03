@@ -5,6 +5,7 @@ Input* Input::s_Instance = nullptr;
 
 Input::Input()
 {
+    m_KeyStates = SDL_GetKeyboardState(nullptr);
     //ctor
 }
 void Input::Listen()
@@ -18,8 +19,7 @@ void Input::Listen()
             case SDL_QUIT:
                 Engine::GetInstance()->Quit();
                 break;
-
-            case SDL_KEYDOWN:
+     case SDL_KEYDOWN:
                 KeyDown();
                 break;
 
@@ -68,4 +68,9 @@ void Input::MotionMouse(int x, int y)
 Point2D Input::GetPoint()
 {
     return m_MouseXY;
+}
+
+void Input::Clean()
+{
+    delete Input::s_Instance;
 }

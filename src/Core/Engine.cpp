@@ -70,6 +70,9 @@ bool Engine::Clean()
     //Limpiar Gestor de Texturas
     TextureManager::GetInstance()->Clean();
 
+    //Limpiar Input
+    Input::GetInstance()->Clean();
+
     //Limpiar Mapa
     MapParser::GetInstance()->Clean();
 

@@ -25,6 +25,8 @@
 					<Add directory="./" />
 					<Add directory="src/Map" />
 					<Add directory="src/States" />
+					<Add directory="Animation" />
+					<Add directory="src/Animation" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -46,6 +48,8 @@
 					<Add directory="./" />
 					<Add directory="src/Map" />
 					<Add directory="src/States" />
+					<Add directory="Animation" />
+					<Add directory="src/Animation" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -59,6 +63,9 @@
 		<Linker>
 			<Add option="-lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer" />
 		</Linker>
+		<Unit filename="src/Animation/Animation.h" />
+		<Unit filename="src/Animation/SpriteAnimation.cpp" />
+		<Unit filename="src/Animation/SpriteAnimation.h" />
 		<Unit filename="src/Collision/CollisionHandler.cpp" />
 		<Unit filename="src/Collision/CollisionHandler.h" />
 		<Unit filename="src/Core/Engine.cpp" />

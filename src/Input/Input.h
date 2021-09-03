@@ -13,6 +13,7 @@ class Input
         }
 
         void Listen();
+        void Clean();
         bool GetKeyDown(SDL_Scancode key);
 
         bool GetMousePressLeft();
