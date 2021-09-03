@@ -16,6 +16,7 @@ class SpriteAnimation : Animation
         void SetProps(std::string textureID, int spriteRow, int frameCount, int speed);
 
     private:
+        Uint32 m_startTime;
         int m_Speed;
         int m_SpriteRow;
         int m_FrameCount;

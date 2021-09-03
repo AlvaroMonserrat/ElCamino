@@ -8,7 +8,7 @@
 #define MOVE_TIME 500.0f;
 #define MOVE_FORCE 20.0f;
 
-#define FALL_DOWN_TIME 50.0f;
+#define FALL_DOWN_TIME 60.0f;
 
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720

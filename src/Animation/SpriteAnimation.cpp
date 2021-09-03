@@ -4,12 +4,25 @@
 
 SpriteAnimation::SpriteAnimation(bool repeat) : Animation(repeat)
 {
-
+    m_startTime = 0;
 }
 
 void SpriteAnimation::Update(float dt)
 {
-    m_CurrentFrame = (SDL_GetTicks() / m_Speed) % m_FrameCount;
+    //std::cout << SDL_GetTicks() - m_startTime  << std::endl;
+    //Clock aumentar
+    if(!isEnded())
+    {
+        m_CurrentFrame = ( (SDL_GetTicks() - m_startTime) / m_Speed) % m_FrameCount;
+        //std::cout << m_CurrentFrame << std::endl;
+    }
+
+    if(m_CurrentFrame == (m_FrameCount -1))
+    {
+        m_IsEnded = true;
+    }
+
+
 }
 
 void SpriteAnimation::Draw(float x, float y, int spriteWidth, int spriteHeight, float xScale, float yScale, SDL_RendererFlip flip)
@@ -24,4 +37,9 @@ void SpriteAnimation::SetProps(std::string textureID, int spriteRow, int frameCo
     m_TextureID = textureID;
     m_SpriteRow = spriteRow;
     m_FrameCount = frameCount;
+    m_IsEnded = false;
+
+    //Reset Clock
+    //std::cout <<  "Reset" << std::endl;
+    m_startTime = SDL_GetTicks();
 }

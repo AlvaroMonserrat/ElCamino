@@ -16,6 +16,8 @@ Ball::Ball(Properties* props) : Entity(props)
     m_MoveForceX = MOVE_FORCE;
     m_MoveForceY = MOVE_FORCE;
 
+    m_IsFalling = false;
+
     m_Animation = new SpriteAnimation();
     m_Animation->SetProps(m_TextureID, 0, 1, 50);
 }
@@ -26,10 +28,10 @@ void Ball::Draw()
     //TextureManager::GetInstance()->Draw(m_TextureID, m_Transform->X, m_Transform->Y, m_Width, m_Height);
     m_Animation->Draw(m_Transform->X, m_Transform->Y, m_Width, m_Height, 1, 1, m_Flip);
 
-    SDL_Rect box = {(int)m_Transform->X + (m_Width / 2) - 2, (int)m_Transform->Y + (m_Height / 2) - 2, 4, 4};
+    //SDL_Rect box = {(int)m_Transform->X + (m_Width / 2) - 2, (int)m_Transform->Y + (m_Height / 2) - 2, 4, 4};
 
-    SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 255, 0, 0, 255);
-    SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &box);
+    //SDL_SetRenderDrawColor(Engine::GetInstance()->GetRenderer(), 255, 0, 0, 255);
+    //SDL_RenderDrawRect(Engine::GetInstance()->GetRenderer(), &box);
 
 }
 
@@ -38,15 +40,7 @@ void Ball::Update(float dt)
     //MoveBall(dt);
     m_IsMoving = false;
 
-
-    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_M))
-    {
-        std::cout << "M was pressed" << std::endl;
-        //Aplicar Animación de sprite
-
-    }
-
-    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_UP))
+    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_UP) && !m_IsFalling)
     {
         m_IsMoving = true;
         m_BodyObject->ApplyForceY(-10);
@@ -54,7 +48,7 @@ void Ball::Update(float dt)
         m_Transform->Y += m_BodyObject->Position().Y;
     }
 
-    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_DOWN))
+    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_DOWN) && !m_IsFalling)
     {
         m_IsMoving = true;
         m_BodyObject->ApplyForceY(10);
@@ -62,7 +56,7 @@ void Ball::Update(float dt)
         m_Transform->Y += m_BodyObject->Position().Y;
     }
 
-    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_LEFT))
+    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_LEFT) && !m_IsFalling)
     {
         m_IsMoving = true;
         m_BodyObject->ApplyForceX(-10);
@@ -70,7 +64,7 @@ void Ball::Update(float dt)
         m_Transform->X += m_BodyObject->Position().X;
     }
 
-    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_RIGHT))
+    if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_RIGHT) && !m_IsFalling)
     {
         m_IsMoving = true;
         m_BodyObject->ApplyForceX(10);
@@ -84,34 +78,30 @@ void Ball::Update(float dt)
     {
         //Revisar si estoy sobre superficie o no.
         SDL_Rect box = {(int)m_Transform->X + (m_Width / 2) - 2, (int)m_Transform->Y + (m_Height / 2) - 2, 4, 4};
-        if(CollisionHandler::GetInstance()->MapCollision(box))
+        if(!CollisionHandler::GetInstance()->MapCollision(box))
         {
-           std::cout << "Colisión" << std::endl;
+           m_IsFalling = true;
+           m_Animation->SetProps("ball_fall_down", 0, 6, 133);
+           std::cout << "No Colisión" << std::endl;
         }
-        else
-        {
-            m_IsFalling = true;
-
-            std::cout << "No Colisión" << std::endl;
-
-            SDL_Rect startZone = StateGame::GetInstance()->getStartZone();
-            m_Transform->X = startZone.x;
-            m_Transform->Y = startZone.y;
-        }
-
     }
 
     if(m_IsFalling && m_FallDownTime > 0)
     {
-        std::cout << m_FallDownTime << std::endl;
+        //std::cout << m_FallDownTime << std::endl;
         m_FallDownTime -= dt;
-        m_Animation->SetProps("ball_fall_down", 0, 6, 200);
-    }else
+    }
+
+    if(m_FallDownTime <= 0)
     {
+        m_Animation->SetProps(m_TextureID, 0, 1, 50);
         m_IsFalling = false;
         m_FallDownTime = FALL_DOWN_TIME;
-        m_Animation->SetProps(m_TextureID, 0, 1, 1000);
+        SDL_Rect startZone = StateGame::GetInstance()->getStartZone();
+        m_Transform->X = startZone.x;
+        m_Transform->Y = startZone.y;
     }
+
 
     m_Animation->Update(dt);
 

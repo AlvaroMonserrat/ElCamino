@@ -148,7 +148,7 @@
 1629896607 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
 	"ManagerFragment.h"
 
-1630632268 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
+1630682069 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
 	"Ball.h"
 	"TextureManager.h"
 	"Input.h"
@@ -156,7 +156,7 @@
 	"StateGame.h"
 	"Engine.h"
 
-1630632308 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.h
+1630682139 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.h
 	"Entity.h"
 	"BodyObject.h"
 	"SpriteAnimation.h"
@@ -229,12 +229,12 @@
 1630293723 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/States/StateGame.h
 	"SDL2/SDL.h"
 
-1630632166 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Animation/SpriteAnimation.cpp
+1630682076 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Animation/SpriteAnimation.cpp
 	"SpriteAnimation.h"
 	"TextureManager.h"
 	<iostream>
 
-1630618662 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Animation/SpriteAnimation.h
+1630680607 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Animation/SpriteAnimation.h
 	"Animation.h"
 	"SDL2/SDL.h"
 	<string>
