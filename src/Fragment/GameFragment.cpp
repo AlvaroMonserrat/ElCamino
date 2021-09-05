@@ -15,6 +15,7 @@ bool GameFragment::Init()
     Properties* propsBall = new Properties("ball_idle", startZone.x, startZone.y, 32, 32);
     //GameObject* ball = ObjectFactory::GetInstance()->CreateObject("BALL", propsBall);
     Ball* ball = new Ball(propsBall);
+
     m_GameObjects.push_back(ball);
 }
 

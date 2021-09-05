@@ -72,6 +72,8 @@
 		<Unit filename="src/Core/Engine.h" />
 		<Unit filename="src/Core/ManagerFragment.cpp" />
 		<Unit filename="src/Core/ManagerFragment.h" />
+		<Unit filename="src/Entities/Arrow.cpp" />
+		<Unit filename="src/Entities/Arrow.h" />
 		<Unit filename="src/Entities/Ball.cpp" />
 		<Unit filename="src/Entities/Ball.h" />
 		<Unit filename="src/Entities/Entity.h" />

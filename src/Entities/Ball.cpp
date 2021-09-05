@@ -20,6 +20,10 @@ Ball::Ball(Properties* props) : Entity(props)
 
     m_Animation = new SpriteAnimation();
     m_Animation->SetProps(m_TextureID, 0, 1, 50);
+
+    //Properties* propsArrow = new Properties("arrow", props->X + (props->Width / 2), props->Y + (props->Width / 2) - (13/2), 48, 13);
+    //m_Arrow = new Arrow(propsArrow);
+
 }
 
 void Ball::Draw()
@@ -27,6 +31,8 @@ void Ball::Draw()
 
     //TextureManager::GetInstance()->Draw(m_TextureID, m_Transform->X, m_Transform->Y, m_Width, m_Height);
     m_Animation->Draw(m_Transform->X, m_Transform->Y, m_Width, m_Height, 1, 1, m_Flip);
+
+    //m_Arrow->Draw();
 
     //SDL_Rect box = {(int)m_Transform->X + (m_Width / 2) - 2, (int)m_Transform->Y + (m_Height / 2) - 2, 4, 4};
 
@@ -102,7 +108,7 @@ void Ball::Update(float dt)
         m_Transform->Y = startZone.y;
     }
 
-
+    //m_Arrow->Update(m_Transform->X, m_Transform->Y);
     m_Animation->Update(dt);
 
 }
@@ -113,6 +119,7 @@ void Ball::Clean()
     delete m_Origin;
     delete m_Transform;
     delete m_BodyObject;
+    delete m_Arrow;
 
 }
 

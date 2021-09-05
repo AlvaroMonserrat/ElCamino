@@ -4,6 +4,7 @@
 #include "Entity.h"
 #include "BodyObject.h"
 #include "SpriteAnimation.h"
+#include "Arrow.h"
 
 #define MOVE_TIME 500.0f;
 #define MOVE_FORCE 20.0f;
@@ -34,6 +35,7 @@ class Ball : public Entity
 
         BodyObject* m_BodyObject;
         SpriteAnimation* m_Animation;
+        Arrow* m_Arrow;
         //bool m_IsGrounded;
 
         void MoveBall(float dt);

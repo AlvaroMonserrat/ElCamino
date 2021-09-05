@@ -3,5 +3,5 @@
 	
 	<texture id="ball_idle" source="assets/images/ball_idle.png"/>
 	<texture id="ball_fall_down" source="assets/images/ball_fall_down.png"/>
-
+	<texture id="arrow" source="assets/images/arrow.png"/>
 </texture>
