@@ -4,6 +4,9 @@
 #include "CollisionHandler.h"
 #include "StateGame.h"
 #include "Engine.h"
+#include <math.h>       /* atan */
+
+#define PI 3.14159265
 
 Ball::Ball(Properties* props) : Entity(props)
 {
@@ -21,8 +24,8 @@ Ball::Ball(Properties* props) : Entity(props)
     m_Animation = new SpriteAnimation();
     m_Animation->SetProps(m_TextureID, 0, 1, 50);
 
-    //Properties* propsArrow = new Properties("arrow", props->X + (props->Width / 2), props->Y + (props->Width / 2) - (13/2), 48, 13);
-    //m_Arrow = new Arrow(propsArrow);
+    Properties* propsArrow = new Properties("arrow", props->X + (props->Width / 2), props->Y + (props->Width / 2) - (13/2), 48, 13);
+    m_Arrow = new Arrow(propsArrow);
 
 }
 
@@ -32,7 +35,7 @@ void Ball::Draw()
     //TextureManager::GetInstance()->Draw(m_TextureID, m_Transform->X, m_Transform->Y, m_Width, m_Height);
     m_Animation->Draw(m_Transform->X, m_Transform->Y, m_Width, m_Height, 1, 1, m_Flip);
 
-    //m_Arrow->Draw();
+    m_Arrow->Draw();
 
     //SDL_Rect box = {(int)m_Transform->X + (m_Width / 2) - 2, (int)m_Transform->Y + (m_Height / 2) - 2, 4, 4};
 
@@ -46,10 +49,17 @@ void Ball::Update(float dt)
     //MoveBall(dt);
     m_IsMoving = false;
 
+    if(Input::GetInstance()->GetMousePressLeft())
+    {
+        //OBTENER ANGULO
+        std::cout << "Angulo: " << AngleArrow() << std::endl;
+
+    }
+
     if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_UP) && !m_IsFalling)
     {
         m_IsMoving = true;
-        m_BodyObject->ApplyForceY(-10);
+        m_BodyObject->ApplyForceY(-20);
         m_BodyObject->Update(dt);
         m_Transform->Y += m_BodyObject->Position().Y;
     }
@@ -57,7 +67,7 @@ void Ball::Update(float dt)
     if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_DOWN) && !m_IsFalling)
     {
         m_IsMoving = true;
-        m_BodyObject->ApplyForceY(10);
+        m_BodyObject->ApplyForceY(20);
         m_BodyObject->Update(dt);
         m_Transform->Y += m_BodyObject->Position().Y;
     }
@@ -65,7 +75,7 @@ void Ball::Update(float dt)
     if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_LEFT) && !m_IsFalling)
     {
         m_IsMoving = true;
-        m_BodyObject->ApplyForceX(-10);
+        m_BodyObject->ApplyForceX(-20);
         m_BodyObject->Update(dt);
         m_Transform->X += m_BodyObject->Position().X;
     }
@@ -73,12 +83,10 @@ void Ball::Update(float dt)
     if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_RIGHT) && !m_IsFalling)
     {
         m_IsMoving = true;
-        m_BodyObject->ApplyForceX(10);
+        m_BodyObject->ApplyForceX(20);
         m_BodyObject->Update(dt);
         m_Transform->X += m_BodyObject->Position().X;
     }
-
-
 
     if(m_IsMoving == true)
     {
@@ -108,7 +116,7 @@ void Ball::Update(float dt)
         m_Transform->Y = startZone.y;
     }
 
-    //m_Arrow->Update(m_Transform->X, m_Transform->Y);
+    m_Arrow->Update(m_Transform->X, m_Transform->Y);
     m_Animation->Update(dt);
 
 }
@@ -184,4 +192,22 @@ void Ball::MoveBall(float dt)
     }
 
 
+}
+
+float Ball::AngleArrow()
+{
+    float angleDegree = 0;
+
+    Point2D mouseXY = Input::GetInstance()->GetPoint();
+
+    float ballCenterX = m_Transform->X + (m_Width / 2);
+    float ballCenterY = m_Transform->Y + (m_Height / 2);
+
+    float dx = std::abs(ballCenterX - mouseXY.X);
+    float dy = std::abs(ballCenterY - mouseXY.Y);
+
+
+    angleDegree = atan(dy/dx) * 180 / PI;
+
+    return angleDegree;
 }

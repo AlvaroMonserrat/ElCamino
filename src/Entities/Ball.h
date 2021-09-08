@@ -6,8 +6,8 @@
 #include "SpriteAnimation.h"
 #include "Arrow.h"
 
-#define MOVE_TIME 500.0f;
-#define MOVE_FORCE 20.0f;
+#define MOVE_TIME 100.0f;
+#define MOVE_FORCE 50.0f;
 
 #define FALL_DOWN_TIME 60.0f;
 
@@ -39,6 +39,7 @@ class Ball : public Entity
         //bool m_IsGrounded;
 
         void MoveBall(float dt);
+        float AngleArrow();
 
 };
 

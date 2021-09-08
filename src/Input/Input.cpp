@@ -31,7 +31,6 @@ void Input::Listen()
                 MotionMouse(event.motion.x, event.motion.y);
                 break;
 
-
         }
     }
 }

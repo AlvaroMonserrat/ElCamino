@@ -5,7 +5,7 @@
 
 1628209578 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Timer/Timer.h
 
-1630588014 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.cpp
+1631031847 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.cpp
 	"Engine.h"
 	"Input.h"
 	"Timer.h"
@@ -25,7 +25,7 @@
 	"Timer.h"
 	<iostream>
 
-1630588882 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.cpp
+1631048370 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.cpp
 	"Input.h"
 	"Engine.h"
 
@@ -148,15 +148,16 @@
 1629896607 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
 	"ManagerFragment.h"
 
-1630803612 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
+1631050864 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
 	"Ball.h"
 	"TextureManager.h"
 	"Input.h"
 	"CollisionHandler.h"
 	"StateGame.h"
 	"Engine.h"
+	<math.h>
 
-1630801301 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.h
+1631049590 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.h
 	"Entity.h"
 	"BodyObject.h"
 	"SpriteAnimation.h"
