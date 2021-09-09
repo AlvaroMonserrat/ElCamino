@@ -5,6 +5,7 @@
 #include "BodyObject.h"
 #include "SpriteAnimation.h"
 #include "Arrow.h"
+#include "SpeedBar.h"
 
 #define MOVE_TIME 10.0f;
 #define MOVE_FORCE 50.0f;
@@ -36,11 +37,9 @@ class Ball : public Entity
         BodyObject* m_BodyObject;
         SpriteAnimation* m_Animation;
         Arrow* m_Arrow;
-        //bool m_IsGrounded;
+        SpeedBar* m_SpeedBar;
 
         void MoveBall(float dt);
-
-        void MoveBall2(float dt);
 
         float AngleArrow();
 

@@ -77,6 +77,8 @@
 		<Unit filename="src/Entities/Ball.cpp" />
 		<Unit filename="src/Entities/Ball.h" />
 		<Unit filename="src/Entities/Entity.h" />
+		<Unit filename="src/Entities/SpeedBar.cpp" />
+		<Unit filename="src/Entities/SpeedBar.h" />
 		<Unit filename="src/Fragment/Fragment.h" />
 		<Unit filename="src/Fragment/GameFragment.cpp" />
 		<Unit filename="src/Fragment/GameFragment.h" />
