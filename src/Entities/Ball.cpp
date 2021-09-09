@@ -4,9 +4,7 @@
 #include "CollisionHandler.h"
 #include "StateGame.h"
 #include "Engine.h"
-#include <math.h>       /* atan */
 
-#define PI 3.14159265
 
 Ball::Ball(Properties* props) : Entity(props)
 {
@@ -47,14 +45,30 @@ void Ball::Draw()
 void Ball::Update(float dt)
 {
     //MoveBall(dt);
-    m_IsMoving = false;
+    //m_IsMoving = false;
+    m_IsClicked = false;
+
+    m_Arrow->SetVisivility(false);
 
     if(Input::GetInstance()->GetMousePressLeft())
     {
-        //OBTENER ANGULO
-        std::cout << "Angulo: " << AngleArrow() << std::endl;
+        //Actualizar angulo
+        m_IsClicked = true;
+        m_Arrow->SetVisivility(true);
+        m_Arrow->UpdateAngle(m_Transform->X, m_Transform->Y, m_Width, m_Height);
+    }
+
+
+    if(Input::GetInstance()->IsButtonLeftReleased())
+    {
+        Input::GetInstance()->ResetButtonLeftReleased();
+        //std::cout << "X:"<< m_Arrow->ProjectionX()*500 << " Y:" << m_Arrow->ProjectionY()*500<< std::endl;
+        m_IsMoving = true;
 
     }
+
+    if(m_IsMoving)
+        MoveBall2(dt);
 
     if(Input::GetInstance()->GetKeyDown(SDL_SCANCODE_UP) && !m_IsFalling)
     {
@@ -95,6 +109,7 @@ void Ball::Update(float dt)
         if(!CollisionHandler::GetInstance()->MapCollision(box))
         {
            m_IsFalling = true;
+           //m_MoveTime = 0;
            m_Animation->SetProps("ball_fall_down", 0, 6, 133);
            std::cout << "No Colisión" << std::endl;
         }
@@ -116,6 +131,8 @@ void Ball::Update(float dt)
         m_Transform->Y = startZone.y;
     }
 
+
+
     m_Arrow->Update(m_Transform->X, m_Transform->Y);
     m_Animation->Update(dt);
 
@@ -127,7 +144,7 @@ void Ball::Clean()
     delete m_Origin;
     delete m_Transform;
     delete m_BodyObject;
-    delete m_Arrow;
+    //delete m_Arrow;
 
 }
 
@@ -194,20 +211,27 @@ void Ball::MoveBall(float dt)
 
 }
 
-float Ball::AngleArrow()
+void Ball::MoveBall2(float dt)
 {
-    float angleDegree = 0;
 
-    Point2D mouseXY = Input::GetInstance()->GetPoint();
+    if(m_IsMoving && m_MoveTime > 0)
+    {
+        m_MoveTime -= dt;
 
-    float ballCenterX = m_Transform->X + (m_Width / 2);
-    float ballCenterY = m_Transform->Y + (m_Height / 2);
+        //std::cout << m_MoveTime << std::endl;
 
-    float dx = std::abs(ballCenterX - mouseXY.X);
-    float dy = std::abs(ballCenterY - mouseXY.Y);
+        m_BodyObject->ApplyForceY(m_Arrow->ProjectionY() * m_MoveForceX);
+        m_BodyObject->ApplyForceX(m_Arrow->ProjectionX() * m_MoveForceY);
 
+        m_BodyObject->Update(dt);
+        m_Transform->Y += m_BodyObject->Position().Y;
+        m_Transform->X += m_BodyObject->Position().X;
 
-    angleDegree = atan(dy/dx) * 180 / PI;
+    }
+    else
+    {
+        m_IsMoving = false;
+        m_MoveTime = MOVE_TIME;
+    }
 
-    return angleDegree;
 }

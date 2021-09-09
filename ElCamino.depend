@@ -25,21 +25,21 @@
 	"Timer.h"
 	<iostream>
 
-1631048370 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.cpp
+1631125800 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.cpp
 	"Input.h"
 	"Engine.h"
 
-1630587975 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.h
+1631125833 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Input/Input.h
 	"SDL2/SDL.h"
 	"Point2D.h"
 
-1630630553 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.cpp
+1631108726 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.cpp
 	"TextureManager.h"
 	"Engine.h"
 	"tinyxml.h"
 	<iostream>
 
-1630630499 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.h
+1631108297 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.h
 	<string>
 	<SDL2/SDL.h>
 	<map>
@@ -132,7 +132,7 @@
 1628347296 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/Fragment.h
 	<SDL2/SDL.h>
 
-1630801716 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.cpp
+1631105924 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/GameFragment.cpp
 	"GameFragment.h"
 	"Engine.h"
 	"MapParser.h"
@@ -148,16 +148,15 @@
 1629896607 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
 	"ManagerFragment.h"
 
-1631050864 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
+1631132665 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
 	"Ball.h"
 	"TextureManager.h"
 	"Input.h"
 	"CollisionHandler.h"
 	"StateGame.h"
 	"Engine.h"
-	<math.h>
 
-1631049590 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.h
+1631130835 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.h
 	"Entity.h"
 	"BodyObject.h"
 	"SpriteAnimation.h"
@@ -243,10 +242,12 @@
 
 1630607314 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Animation/Animation.h
 
-1630802453 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Arrow.h
+1631128408 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Arrow.h
 	"Entity.h"
+	"Input.h"
+	<math.h>
 
-1630802611 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Arrow.cpp
+1631128481 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Arrow.cpp
 	"Arrow.h"
 	"TextureManager.h"
 

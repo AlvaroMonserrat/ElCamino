@@ -14,7 +14,12 @@ class Input
 
         void Listen();
         void Clean();
+
+        inline bool IsButtonLeftReleased(){return isButtonReleased;}
+        inline void ResetButtonLeftReleased(){ isButtonReleased = false;}
+
         bool GetKeyDown(SDL_Scancode key);
+        bool OnClickUP();
 
         bool GetMousePressLeft();
         Point2D GetPoint();
@@ -27,10 +32,12 @@ class Input
         void KeyDown();
 
         void MotionMouse(int x, int y);
+        void ButtonLeftReleased();
 
         Point2D m_MouseXY;
         const Uint8* m_KeyStates;
         Uint32 m_MouseStates;
+        bool isButtonReleased;
 };
 
 #endif // INPUT_H

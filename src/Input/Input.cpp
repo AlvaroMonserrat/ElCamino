@@ -6,6 +6,7 @@ Input* Input::s_Instance = nullptr;
 Input::Input()
 {
     m_KeyStates = SDL_GetKeyboardState(nullptr);
+    isButtonReleased = false;
     //ctor
 }
 void Input::Listen()
@@ -19,7 +20,7 @@ void Input::Listen()
             case SDL_QUIT:
                 Engine::GetInstance()->Quit();
                 break;
-     case SDL_KEYDOWN:
+            case SDL_KEYDOWN:
                 KeyDown();
                 break;
 
@@ -30,6 +31,11 @@ void Input::Listen()
             case SDL_MOUSEMOTION:
                 MotionMouse(event.motion.x, event.motion.y);
                 break;
+
+            case SDL_MOUSEBUTTONUP:
+                ButtonLeftReleased();
+                break;
+
 
         }
     }
@@ -73,3 +79,9 @@ void Input::Clean()
 {
     delete Input::s_Instance;
 }
+
+void Input::ButtonLeftReleased()
+{
+    isButtonReleased = true;
+}
+

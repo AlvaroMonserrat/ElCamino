@@ -17,6 +17,8 @@ bool GameFragment::Init()
     Ball* ball = new Ball(propsBall);
 
     m_GameObjects.push_back(ball);
+
+    return true;
 }
 
 bool GameFragment::Exit()
@@ -28,7 +30,7 @@ bool GameFragment::Exit()
     }
 
     //Limpiar Mapa
-
+    return true;
 
 }
 
