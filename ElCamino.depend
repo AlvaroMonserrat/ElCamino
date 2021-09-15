@@ -148,7 +148,7 @@
 1629896607 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
 	"ManagerFragment.h"
 
-1631229536 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
+1631229592 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
 	"Ball.h"
 	"TextureManager.h"
 	"Input.h"
@@ -259,4 +259,10 @@
 1631229426 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/SpeedBar.cpp
 	"SpeedBar.h"
 	"Engine.h"
+
+1631554519 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/MenuFragment.cpp
+	"MenuFragment.h"
+
+1631554469 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/MenuFragment.h
+	"Fragment.h"
 

@@ -27,6 +27,7 @@
 					<Add directory="src/States" />
 					<Add directory="Animation" />
 					<Add directory="src/Animation" />
+					<Add directory="src/Widgets" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -50,6 +51,7 @@
 					<Add directory="src/States" />
 					<Add directory="Animation" />
 					<Add directory="src/Animation" />
+					<Add directory="src/Widgets" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -82,6 +84,8 @@
 		<Unit filename="src/Fragment/Fragment.h" />
 		<Unit filename="src/Fragment/GameFragment.cpp" />
 		<Unit filename="src/Fragment/GameFragment.h" />
+		<Unit filename="src/Fragment/MenuFragment.cpp" />
+		<Unit filename="src/Fragment/MenuFragment.h" />
 		<Unit filename="src/Graphics/TextureManager.cpp" />
 		<Unit filename="src/Graphics/TextureManager.h" />
 		<Unit filename="src/Input/Input.cpp" />
@@ -108,6 +112,9 @@
 		<Unit filename="src/Vendor/tinyxml.h" />
 		<Unit filename="src/Vendor/tinyxmlerror.cpp" />
 		<Unit filename="src/Vendor/tinyxmlparser.cpp" />
+		<Unit filename="src/Widgets/Button.cpp" />
+		<Unit filename="src/Widgets/Button.h" />
+		<Unit filename="src/Widgets/Widget.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions />
 	</Project>
