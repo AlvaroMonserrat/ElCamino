@@ -28,6 +28,7 @@
 					<Add directory="Animation" />
 					<Add directory="src/Animation" />
 					<Add directory="src/Widgets" />
+					<Add directory="src/GUI" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -52,6 +53,7 @@
 					<Add directory="Animation" />
 					<Add directory="src/Animation" />
 					<Add directory="src/Widgets" />
+					<Add directory="src/GUI" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -86,6 +88,8 @@
 		<Unit filename="src/Fragment/GameFragment.h" />
 		<Unit filename="src/Fragment/MenuFragment.cpp" />
 		<Unit filename="src/Fragment/MenuFragment.h" />
+		<Unit filename="src/GUI/PackManager.cpp" />
+		<Unit filename="src/GUI/PackManager.h" />
 		<Unit filename="src/Graphics/TextureManager.cpp" />
 		<Unit filename="src/Graphics/TextureManager.h" />
 		<Unit filename="src/Input/Input.cpp" />

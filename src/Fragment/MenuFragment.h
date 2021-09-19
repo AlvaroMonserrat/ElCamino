@@ -2,6 +2,11 @@
 #define MENUFRAGMENT_H
 
 #include "Fragment.h"
+#include "SDL2/SDL.h"
+#include "Engine.h"
+#include "Input.h"
+#include "Button.h"
+#include "Widget.h"
 
 enum{
     START,
@@ -9,7 +14,7 @@ enum{
     EXIT
 };
 
-class MenuGame : public Fragment
+class MenuFragment : public Fragment
 {
     public:
         virtual bool Init();

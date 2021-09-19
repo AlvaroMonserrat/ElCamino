@@ -11,6 +11,9 @@
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
 
+enum{MENU, GAME};
+
+
 class Engine
 {
     public:
@@ -32,6 +35,9 @@ class Engine
         inline void ExitGame(){ m_IsRunning = false; }
 
         inline SDL_Renderer* GetRenderer(){ return m_Renderer; }
+
+        void ChangeFragment(int fragment);
+
 
 
     private:

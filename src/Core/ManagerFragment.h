@@ -18,6 +18,7 @@ class ManagerFragment
         void Draw();
         void Clean();
         Fragment* GetCurrent();
+        void SetFragment(int TYPE);
 
     private:
         std::vector<Fragment*> m_Fragments;

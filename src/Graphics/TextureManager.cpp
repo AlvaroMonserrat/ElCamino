@@ -127,6 +127,17 @@ void TextureManager::DrawRotation(std::string id, int x, int y, int width, int h
 }
 
 
+void TextureManager::DrawWidget(std::string id, int x, int y, int width, int height,float scaleXY, SDL_RendererFlip flip)
+{
+    SDL_Rect srcRect = {0, 0, width/scaleXY, height/scaleXY};
+
+    //SDL_Rect dstRect = {PackManager::->GetInstance()->GetPositionX(id), PackManager::->GetInstance()->GetPositionY(id)};
+    //std::cout << "width:" << width << std::endl;
+    SDL_Rect dstRect = {x, y, width, height};
+
+    SDL_RenderCopyEx(Engine::GetInstance()->GetRenderer(), m_TextureMap[id], &srcRect, &dstRect, 0, nullptr, flip);
+}
+
 void TextureManager::Clean()
 {
     std::map<std::string, SDL_Texture*>::iterator it;
