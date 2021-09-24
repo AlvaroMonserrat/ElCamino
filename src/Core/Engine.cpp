@@ -109,7 +109,7 @@ void Engine::Update()
 
 void Engine::Render()
 {
-    SDL_SetRenderDrawColor(m_Renderer, 32, 154, 227, 255);
+    SDL_SetRenderDrawColor(m_Renderer, 100, 80, 100, 255);
     SDL_RenderClear(m_Renderer);
 
     m_ManagerFragment.Draw();

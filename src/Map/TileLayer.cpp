@@ -57,7 +57,7 @@ void TileLayer::Render()
                     tileCol = ts.ColCount - 1 ;
                 }
 
-                TextureManager::GetInstance()->DrawTile(ts.Name, ts.TileSize, j*ts.TileSize, i*ts.TileSize, tileRow, tileCol);
+                TextureManager::GetInstance()->DrawTile(ts.Name, ts.TileSize, (j)*ts.TileSize, i*ts.TileSize, tileRow, tileCol, ts.Spacing, ts.Margin);
             }
 
         }

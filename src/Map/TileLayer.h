@@ -10,6 +10,7 @@ struct TileSet
     int FirstID, LastID;
     int RowCount, ColCount;
     int TileCount, TileSize;
+    int Spacing, Margin;
     std::string Name, Source;
 };
 

@@ -30,8 +30,9 @@ void MenuFragment::Update(float dt)
 
     if(PackManager::GetInstance()->GetButton(MENU, START)->isClicked())
     {
-        Engine::GetInstance()->ChangeFragment(GAME);
         SDL_Delay(200);
+        Engine::GetInstance()->ChangeFragment(GAME);
+
     }
 
     if(PackManager::GetInstance()->GetButton(MENU, EXIT)->isClicked())

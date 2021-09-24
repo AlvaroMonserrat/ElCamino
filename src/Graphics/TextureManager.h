@@ -19,7 +19,7 @@ class TextureManager
         void Clean();
 
         void Draw(std::string id, int x, int y, int width, int height, float scaleX=1, float scaleY=1, float scrollRatio = 0, SDL_RendererFlip flip=SDL_FLIP_NONE);
-        void DrawTile(std::string tilesetID, int tileSize, int x, int y, int row, int frame, SDL_RendererFlip flip=SDL_FLIP_NONE);
+        void DrawTile(std::string tilesetID, int tileSize, int x, int y, int row, int frame, int space, int margin, SDL_RendererFlip flip=SDL_FLIP_NONE);
         void DrawFrame(std::string id, int x, int y, int width, int height, int row, int frame, SDL_RendererFlip flip=SDL_FLIP_NONE);
         void DrawRotation(std::string id, int x, int y, int width, int height, float scaleX=1, float scaleY=1, double angle = 0, SDL_Point *center=nullptr, SDL_RendererFlip flip=SDL_FLIP_NONE);
         void DrawWidget(std::string id, int x, int y, int width, int height, float scaleXY=1, SDL_RendererFlip flip=SDL_FLIP_NONE);

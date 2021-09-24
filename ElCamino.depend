@@ -5,7 +5,7 @@
 
 1628209578 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Timer/Timer.h
 
-1632015869 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.cpp
+1632488339 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/Engine.cpp
 	"Engine.h"
 	"Input.h"
 	"Timer.h"
@@ -34,13 +34,13 @@
 	"SDL2/SDL.h"
 	"Point2D.h"
 
-1632015789 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.cpp
+1632486908 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.cpp
 	"TextureManager.h"
 	"Engine.h"
 	"tinyxml.h"
 	<iostream>
 
-1632012957 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.h
+1632486827 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Graphics/TextureManager.h
 	<string>
 	<SDL2/SDL.h>
 	<map>
@@ -146,10 +146,10 @@
 	"GameObject.h"
 	"GameMap.h"
 
-1632017456 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
+1632488339 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Core/ManagerFragment.cpp
 	"ManagerFragment.h"
 
-1631229592 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
+1632488271 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Entities/Ball.cpp
 	"Ball.h"
 	"TextureManager.h"
 	"Input.h"
@@ -212,16 +212,16 @@
 	"TileLayer.h"
 	"tinyxml.h"
 
-1629855539 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/TileLayer.h
+1632484216 /home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/TileLayer.h
 	"Layer.h"
 	<string>
 	<vector>
 
-1630293171 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/MapParser.cpp
+1632487237 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/MapParser.cpp
 	"MapParser.h"
 	"StateGame.h"
 
-1629913185 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/TileLayer.cpp
+1632486873 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Map/TileLayer.cpp
 	"TileLayer.h"
 	"TextureManager.h"
 	<iostream>
@@ -261,7 +261,7 @@
 	"SpeedBar.h"
 	"Engine.h"
 
-1632017087 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/MenuFragment.cpp
+1632488052 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Fragment/MenuFragment.cpp
 	"MenuFragment.h"
 	"PackManager.h"
 
@@ -273,7 +273,7 @@
 	"Button.h"
 	"Widget.h"
 
-1632016551 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Widgets/Button.cpp
+1632265548 source:/home/amonserrat/Documents/Games/ElCamino/ElCamino/src/Widgets/Button.cpp
 	"Button.h"
 	"tinyxml.h"
 

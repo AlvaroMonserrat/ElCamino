@@ -5,7 +5,7 @@ MapParser* MapParser::s_Instance = nullptr;
 
 bool MapParser::Load()
 {
-    return Parse("map", "assets/maps/camino_mapa1.tmx");
+    return Parse("map", "assets/maps/etapa2.tmx");
 }
 
 bool MapParser::Clean()
@@ -87,6 +87,9 @@ TileSet MapParser::ParseTileset(TiXmlElement* xmlTileset)
 
     xmlTileset->Attribute("tilewidth", &tileset.TileSize);
 
+    xmlTileset->Attribute("spacing", &tileset.Spacing);
+    xmlTileset->Attribute("margin", &tileset.Margin);
+
     TiXmlElement* image = xmlTileset->FirstChildElement();
     tileset.Source = image->Attribute("source");
 
@@ -118,7 +121,7 @@ TileLayer* MapParser::ParseTileLayer(TiXmlElement* xmlLayer, TilesetList tileset
         for(int col = 0; col < colcount; col++)
         {
             getline(iss, id, ',');
-            if(id.compare("83") == 0)
+            if(id.compare("39") == 0)
             {
                 //std::cout << "col:" << col  << " row:" << row << std::endl;
                 //std::cout << "x:" << col*tilesize  << " y:" << row*tilesize << std::endl;
