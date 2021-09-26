@@ -18,6 +18,8 @@ class Input
         inline bool IsButtonLeftReleased(){return isButtonReleased;}
         inline void ResetButtonLeftReleased(){ isButtonReleased = false;}
 
+        void RemoveEventMouse();
+
         bool GetKeyDown(SDL_Scancode key);
         bool OnClickUP();
 

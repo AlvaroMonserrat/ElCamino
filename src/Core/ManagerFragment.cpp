@@ -18,11 +18,11 @@ Fragment* ManagerFragment::GetCurrent()
 
 void ManagerFragment::Init()
 {
-    //m_CurrentFragment->Init();
-    for(int i = 0; i < m_Fragments.size(); i++)
-    {
-        m_Fragments[i]->Init();
-    }
+    m_CurrentFragment->Init();
+//    for(int i = 0; i < m_Fragments.size(); i++)
+//    {
+//        m_Fragments[i]->Init();
+//    }
 }
 
 void ManagerFragment::Update(float dt)
@@ -47,4 +47,6 @@ void ManagerFragment::Clean()
 void ManagerFragment::SetFragment(int TYPE)
 {
     m_CurrentFragment = m_Fragments[TYPE];
+    //Esperar
+    m_CurrentFragment->Init();
 }

@@ -46,6 +46,7 @@ class Engine
 
         static Engine* s_Instance;
         bool m_IsRunning;
+        int m_WaitingTime;
 
         SDL_Window* m_Window;
         SDL_Renderer* m_Renderer;

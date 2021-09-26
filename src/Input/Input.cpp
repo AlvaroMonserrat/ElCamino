@@ -85,3 +85,7 @@ void Input::ButtonLeftReleased()
     isButtonReleased = true;
 }
 
+void Input::RemoveEventMouse()
+{
+    SDL_FlushEvent(SDL_MOUSEBUTTONUP);
+}

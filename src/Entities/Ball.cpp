@@ -9,6 +9,11 @@
 Ball::Ball(Properties* props) : Entity(props)
 {
     m_IsMoving = false;
+    m_IsFalling = false;
+
+    //Envitar que se mueva al iniciar el Juego
+    m_FirstMove = true;
+
     m_BodyObject = new BodyObject();
     m_BodyObject->SetMass(3);
     m_BodyObject->ApplyFriction(Vector2D(0,0));
@@ -17,15 +22,11 @@ Ball::Ball(Properties* props) : Entity(props)
     m_MoveForceX = MOVE_FORCE;
     m_MoveForceY = MOVE_FORCE;
 
-    m_IsFalling = false;
-
     m_Animation = new SpriteAnimation();
     m_Animation->SetProps(m_TextureID, 0, 1, 50);
 
     Properties* propsArrow = new Properties("arrow", props->X + (props->Width / 2), props->Y + (props->Width / 2) - (13/2), 48, 13);
-
     m_Arrow = new Arrow(propsArrow);
-
     m_SpeedBar = new SpeedBar(props->X, props->Y, 24, 96);
 
 }
@@ -39,7 +40,6 @@ void Ball::Draw()
 
 void Ball::Update(float dt)
 {
-
     m_IsClicked = false;
 
     m_Arrow->SetVisivility(false);
@@ -56,12 +56,19 @@ void Ball::Update(float dt)
 
     if(Input::GetInstance()->IsButtonLeftReleased())
     {
+
         Input::GetInstance()->ResetButtonLeftReleased();
-        //std::cout << "X:"<< m_Arrow->ProjectionX()*500 << " Y:" << m_Arrow->ProjectionY()*500<< std::endl;
-        m_IsMoving = true;
-        m_MoveForceX = m_SpeedBar->GetForceSpeed();
-        m_MoveForceY = m_SpeedBar->GetForceSpeed();
-        //std::cout << m_SpeedBar->GetForceSpeed() << std::endl;
+
+        if(m_FirstMove)
+        {
+            m_FirstMove = false;
+
+        }else
+        {
+            m_IsMoving = true;
+            m_MoveForceX = m_SpeedBar->GetForceSpeed();
+            m_MoveForceY = m_SpeedBar->GetForceSpeed();
+        }
     }
 
     if(m_IsMoving)
@@ -76,7 +83,7 @@ void Ball::Update(float dt)
         {
            m_IsFalling = true;
            //m_IsMoving = false;
-           //m_MoveTime = 0;
+           m_MoveTime = 0;
            m_Animation->SetProps("ball_fall_down", 0, 6, 133);
            std::cout << "No Colisión" << std::endl;
         }
@@ -102,7 +109,6 @@ void Ball::Update(float dt)
     m_Arrow->Update(m_Transform->X, m_Transform->Y);
     m_SpeedBar->Update(m_Transform->X, m_Transform->Y);
     m_Animation->Update(dt);
-
 }
 
 void Ball::Clean()

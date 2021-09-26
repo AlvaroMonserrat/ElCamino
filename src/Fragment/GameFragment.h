@@ -17,6 +17,7 @@ class GameFragment : public Fragment
     private:
         GameMap* m_LevelMap;
         std::vector<GameObject*> m_GameObjects;
+        int m_time;
 };
 
 #endif // GAMEFRAGMENT_H

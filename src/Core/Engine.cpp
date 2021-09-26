@@ -63,6 +63,7 @@ bool Engine::Init()
     m_ManagerFragment.AddFragment(new GameFragment());
     m_ManagerFragment.Init();
 
+    m_WaitingTime = 0;
 
     return m_IsRunning;
 }
@@ -109,9 +110,6 @@ void Engine::Update()
 
 void Engine::Render()
 {
-    SDL_SetRenderDrawColor(m_Renderer, 100, 80, 100, 255);
-    SDL_RenderClear(m_Renderer);
-
     m_ManagerFragment.Draw();
 
     SDL_RenderPresent(m_Renderer);

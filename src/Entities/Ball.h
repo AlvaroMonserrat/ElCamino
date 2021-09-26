@@ -26,6 +26,7 @@ class Ball : public Entity
     private:
         bool m_IsMoving;
         bool m_IsClicked;
+        bool m_FirstMove;
 
         float m_MoveTime;
         float m_MoveForceX;
